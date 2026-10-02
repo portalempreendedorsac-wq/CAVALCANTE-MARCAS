@@ -66,49 +66,16 @@
             margin: 0 auto;
         }
 
-        /* Logo Profissional em HTML/CSS (Garantido de aparecer) */
-        .logo-marca {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-icone {
-            width: 45px;
-            height: 45px;
-            background: var(--gradient-brand);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 24px;
-            color: white;
-            box-shadow: 0 4px 15px rgba(230, 126, 65, 0.3);
-        }
-
-        .logo-textos {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-nome {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            color: #FFFFFF;
-        }
-
-        .logo-sub {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-orange);
-            font-weight: 700;
-            margin-top: -2px;
+        /* LOGO ESTILIZADA PARA GARANTIR VISIBILIDADE */
+        .logo img {
+            height: 65px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+            background: #ffffff; /* Fundo branco protetor caso a logo seja escura */
+            padding: 6px 12px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         nav {
@@ -373,14 +340,8 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <!-- Logótipo Profissional Tipográfico em HTML/CSS -->
-                <div class="logo-marca">
-                    <div class="logo-icone">C</div>
-                    <div class="logo-textos">
-                        <span class="logo-nome">CAVALCANTE</span>
-                        <span class="logo-sub">Marcas e Patentes</span>
-                    </div>
-                </div>
+                <!-- Aponte diretamente para o ficheiro da imagem na mesma pasta -->
+                <img src="LOGOMARCA.jpg" alt="Cavalcante Marcas e Patentes">
             </div>
             <nav>
                 <a href="#vantagens">Vantagens</a>
