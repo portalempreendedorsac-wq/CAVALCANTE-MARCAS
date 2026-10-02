@@ -1,264 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cavalcante Marcas e Patentes</title>
-    <!-- Tailwind CSS para estilização rápida e moderna -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#050a11', /* Ajustado para um tom ainda mais escuro para fundir melhor com a logo */
-                            orange: '#e85d22', /* Laranja da fênix */
-                            red: '#cc2812', /* Vermelho da fênix */
-                            light: '#f3f4f6'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Fonte Inter do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #050a11;
-            color: #ffffff;
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #e85d22, #cc2812);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .bg-gradient-brand {
-            background: linear-gradient(to right, #e85d22, #cc2812);
-        }
-        .hover-gradient:hover {
-            background: linear-gradient(to right, #cc2812, #e85d22);
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        
+        /* Cabeçalho com a cor exata do fundo da imagem para uma integração perfeita */
+        header { background-color: #03060b; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #e74c3c; }
+        .logo img { max-height: 100px; }
+        nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 600; text-transform: uppercase; font-size: 14px; transition: color 0.3s; }
+        nav a:hover { color: #e74c3c; }
+        
+        .hero { background: linear-gradient(135deg, #03060b 0%, #1a2533 100%); color: #fff; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; color: #e74c3c; }
+        .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .btn { background-color: #e74c3c; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1rem; transition: background 0.3s; display: inline-block; }
+        .btn:hover { background-color: #c0392b; }
+        
+        .section-title { text-align: center; padding: 60px 20px 30px; font-size: 2.5rem; color: #03060b; }
+        
+        .vantagens { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 0 50px 60px; }
+        .card { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 320px; text-align: center; border-top: 4px solid #e74c3c; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-bottom: 15px; color: #03060b; font-size: 1.5rem; }
+        
+        .riscos { background-color: #e0e6ed; padding: 60px 20px; text-align: center; }
+        .riscos-container { max-width: 900px; margin: 0 auto; text-align: left; background: #fff; padding: 40px; border-left: 5px solid #c0392b; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .riscos-container h3 { color: #c0392b; margin-bottom: 20px; font-size: 1.8rem; }
+        .riscos-container p { margin-bottom: 15px; font-size: 1.1rem; }
+        
+        .clientes { padding: 20px 20px 60px; text-align: center; }
+        .clientes-logos { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
+        .cliente-box { width: 160px; height: 100px; background-color: #ecf0f1; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #7f8c8d; font-weight: bold; border: 1px dashed #bdc3c7; }
+        
+        footer { background-color: #03060b; color: #fff; padding: 60px 20px; text-align: center; }
+        footer h2 { margin-bottom: 20px; font-size: 2rem; }
+        .contato-info { margin-bottom: 30px; font-size: 1.2rem; }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Cabeçalho (Navbar) -->
-    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <!-- Logomarca puxando o arquivo local com qualidade 100% -->
-                    <img class="h-16 md:h-20 w-auto object-contain" src="LOGOMARCA.jpg" alt="Cavalcante Marcas e Patentes">
-                </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#vantagens" class="text-gray-300 hover:text-white transition px-3 py-2 text-sm font-medium">Vantagens</a>
-                    <a href="#riscos" class="text-gray-300 hover:text-white transition px-3 py-2 text-sm font-medium">Os Riscos</a>
-                    <a href="#clientes" class="text-gray-300 hover:text-white transition px-3 py-2 text-sm font-medium">Clientes</a>
-                    <a href="#contato" class="bg-gradient-brand hover-gradient text-white px-5 py-2 rounded-md text-sm font-medium transition shadow-lg shadow-brand-orange/20">Fale Conosco</a>
-                </nav>
-            </div>
+    <header>
+        <div class="logo">
+            <!-- COLE O CÓDIGO BASE64 EXATAMENTE DENTRO DAS ASPAS DO SRC ABAIXO -->
+            <img src="COLE_AQUI_O_SEU_CODIGO_BASE64" alt="Cavalcante Marcas e Patentes">
         </div>
+        <nav>
+            <a href="#vantagens">Vantagens</a>
+            <a href="#riscos">Casos Reais</a>
+            <a href="#clientes">Clientes</a>
+            <a href="#contato">Contacto</a>
+        </nav>
     </header>
 
-    <!-- Seção Hero (Apresentação Principal) -->
-    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                Sua marca é o seu maior patrimônio.<br>
-                <span class="text-gradient">Proteja sua exclusividade.</span>
-            </h1>
-            <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-                A Cavalcante Marcas e Patentes garante a segurança jurídica do seu negócio. O registro é a única forma legal de ser dono da sua marca em todo o território nacional.
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#contato" class="bg-gradient-brand hover-gradient text-white px-8 py-4 rounded-lg text-lg font-semibold transition shadow-lg shadow-brand-red/30">
-                    Registrar Minha Marca
-                </a>
-                <a href="#vantagens" class="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition border border-gray-700">
-                    Saber Mais
-                </a>
-            </div>
+    <section class="hero">
+        <h1>O seu maior património protegido.</h1>
+        <p>Trabalhamos com o registo de marcas para garantir a segurança jurídica da sua empresa. Não deixe a identidade do seu negócio nas mãos da sorte.</p>
+        <a href="#contato" class="btn">Registar a Minha Marca</a>
+    </section>
+
+    <h2 class="section-title" id="vantagens">Porquê Registar a sua Marca?</h2>
+    <section class="vantagens">
+        <div class="card">
+            <h3>Uso Exclusivo</h3>
+            <p>Garanta o direito de utilizar a sua marca de forma exclusiva em todo o território nacional, afastando a concorrência desleal.</p>
+        </div>
+        <div class="card">
+            <h3>Segurança Jurídica</h3>
+            <p>Proteja-se contra cópias e tenha o amparo da lei para notificar ou processar quem tentar usar um nome igual ou semelhante ao seu.</p>
+        </div>
+        <div class="card">
+            <h3>Valorização do Negócio</h3>
+            <p>Uma marca registada é um ativo real da empresa, podendo ser franqueada, vendida ou licenciada, aumentando o seu valor de mercado.</p>
         </div>
     </section>
 
-    <!-- Seção Vantagens -->
-    <section id="vantagens" class="py-20 bg-gray-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que o registro é indispensável?</h2>
-                <p class="text-gray-400 text-lg">Descubra as vantagens exclusivas de ser o verdadeiro dono da sua marca.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
-                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
-                        <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Uso Exclusivo</h3>
-                    <p class="text-gray-400 text-sm">Garante o direito de uso exclusivo da sua marca em todo o Brasil no seu segmento de atuação.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
-                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
-                        <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Proteção contra Cópias</h3>
-                    <p class="text-gray-400 text-sm">Base legal sólida para impedir que concorrentes usem nomes ou logotipos semelhantes para confundir clientes.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
-                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
-                        <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Patrimônio do Negócio</h3>
-                    <p class="text-gray-400 text-sm">A marca registrada torna-se um bem móvel da empresa, podendo ser avaliada, vendida ou herdada.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
-                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
-                        <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Franquias e Licenças</h3>
-                    <p class="text-gray-400 text-sm">O registro é requisito obrigatório para quem deseja expandir o negócio através de franchising ou licenciamento.</p>
-                </div>
-            </div>
+    <section class="riscos" id="riscos">
+        <div class="riscos-container">
+            <h3>O Perigo de Não Registar</h3>
+            <p><strong>Casos reais de prejuízo:</strong> Inúmeras empresas construíram a sua reputação durante anos, investiram em fachadas, fardas e marketing digital, mas esqueceram-se do mais importante: o registo da marca.</p>
+            <p><strong>O resultado?</strong> Foram notificadas judicialmente pelo verdadeiro detentor do registo. Tiveram de pagar indemnizações altíssimas por uso indevido, além de suportar o custo tremendo de ter de trocar todo o nome, logótipo, materiais gráficos e refazer a comunicação com os clientes a partir do zero.</p>
+            <p>Quem não regista, não é dono. Evite ser obrigado a mudar o nome da sua própria empresa.</p>
         </div>
     </section>
 
-    <!-- Seção Riscos (Casos de Notificação) -->
-    <section id="riscos" class="py-20 relative overflow-hidden">
-        <!-- Elemento visual de fundo -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-red/5 blur-3xl"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-red-500">O alto preço de não registrar</h2>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        No Brasil, a propriedade de uma marca não pertence a quem usou primeiro, mas sim a <strong>quem registrar primeiro no INPI</strong>. Milhares de empresas perdem tudo o que construíram do dia para a noite.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <!-- Caso 1 -->
-                        <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
-                            <h4 class="text-white font-bold text-lg mb-2">Notificação Extrajudicial e Rebranding Forçado</h4>
-                            <p class="text-gray-400 text-sm">
-                                "Uma hamburgueria local operou por 4 anos com muito sucesso. Porém, outra empresa em outro estado registrou o mesmo nome. O dono original recebeu uma notificação judicial, foi obrigado a trocar toda a sua fachada, embalagens e redes sociais em 15 dias, sob pena de multa diária de R$ 5.000,00."
-                            </p>
-                        </div>
-                        
-                        <!-- Caso 2 -->
-                        <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
-                            <h4 class="text-white font-bold text-lg mb-2">Bloqueio de Redes Sociais e E-commerce</h4>
-                            <p class="text-gray-400 text-sm">
-                                "Uma loja de roupas online teve sua conta do Instagram derrubada e foi banida dos marketplaces após um concorrente registrar a marca que ela usava. Além de perder a clientela digital, teve a mercadoria apreendida por uso indevido de propriedade intelectual alheia."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-10 text-center relative">
-                    <svg class="w-16 h-16 text-brand-orange mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                    <h3 class="text-2xl font-bold mb-4">Não corra este risco</h3>
-                    <p class="text-gray-400 mb-8">
-                        Se a sua marca já está no mercado e ainda não possui o certificado de registro do INPI, você está construindo sua empresa em um terreno alugado.
-                    </p>
-                    <a href="#contato" class="inline-block w-full bg-gradient-brand hover-gradient text-white px-6 py-4 rounded-lg font-semibold transition text-center">
-                        Fazer Busca de Viabilidade Gratuita
-                    </a>
-                </div>
-            </div>
+    <h2 class="section-title" id="clientes">Quem Confia no Nosso Trabalho</h2>
+    <section class="clientes">
+        <div class="clientes-logos">
+            <div class="cliente-box">LOGO CLIENTE 1</div>
+            <div class="cliente-box">LOGO CLIENTE 2</div>
+            <div class="cliente-box">LOGO CLIENTE 3</div>
+            <div class="cliente-box">LOGO CLIENTE 4</div>
         </div>
     </section>
 
-    <!-- Seção Nossos Clientes -->
-    <section id="clientes" class="py-20 bg-gray-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Marcas que confiam na Cavalcante</h2>
-                <p class="text-gray-400">Junte-se ao grupo de empresários que protegem seus maiores ativos conosco.</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-70 grayscale hover:grayscale-0 transition duration-500">
-                <div class="bg-brand-dark border border-gray-800 h-24 rounded-lg flex items-center justify-center p-4">
-                    <span class="text-gray-500 font-semibold text-sm">LOGO DO CLIENTE 1</span>
-                </div>
-                <div class="bg-brand-dark border border-gray-800 h-24 rounded-lg flex items-center justify-center p-4">
-                    <span class="text-gray-500 font-semibold text-sm">LOGO DO CLIENTE 2</span>
-                </div>
-                <div class="bg-brand-dark border border-gray-800 h-24 rounded-lg flex items-center justify-center p-4">
-                    <span class="text-gray-500 font-semibold text-sm">LOGO DO CLIENTE 3</span>
-                </div>
-                <div class="bg-brand-dark border border-gray-800 h-24 rounded-lg flex items-center justify-center p-4">
-                    <span class="text-gray-500 font-semibold text-sm">LOGO DO CLIENTE 4</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Contato / Lead -->
-    <section id="contato" class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brand-dark border border-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-brand"></div>
-                
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold mb-4">Proteja sua marca hoje mesmo</h2>
-                    <p class="text-gray-400">Preencha os dados abaixo ou chame no WhatsApp para iniciarmos o processo de análise e registro.</p>
-                </div>
-
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Nome Completo</label>
-                            <input type="text" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition" placeholder="Seu nome">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">WhatsApp / Telefone</label>
-                            <input type="tel" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition" placeholder="(00) 00000-0000">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Nome da Marca (se já existir)</label>
-                        <input type="text" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition" placeholder="Ex: Cavalcante Patentes">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Sua Mensagem</label>
-                        <textarea rows="4" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition" placeholder="Como podemos ajudar?"></textarea>
-                    </div>
-                    <button type="button" class="w-full bg-gradient-brand hover-gradient text-white font-bold text-lg py-4 rounded-lg transition shadow-lg">
-                        Solicitar Contato
-                    </button>
-                </form>
-
-                <div class="mt-8 pt-8 border-t border-gray-800 text-center">
-                    <p class="text-gray-400 mb-4">Ou se preferir um atendimento mais rápido:</p>
-                    <a href="https://wa.me/5511999999999" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-3 rounded-lg font-semibold transition">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                        Falar no WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer class="bg-brand-dark border-t border-gray-800 py-10 mt-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <span class="text-2xl font-bold tracking-wider">CAVALCANTE</span>
-                <span class="text-xs text-brand-orange mt-1">Marcas e Patentes</span>
-            </div>
-            <p class="text-gray-500 text-sm">
-                &copy; 2026 Cavalcante Marcas e Patentes. Todos os direitos reservados.
-            </p>
-        </div>
+    <footer id="contato">
+        <h2>Pronto para proteger a sua marca?</h2>
+        <p class="contato-info">Fale com os nossos especialistas e inicie o processo de registo hoje mesmo.</p>
+        <!-- Substitua o número abaixo pelo WhatsApp da empresa -->
+        <a href="https://wa.me/5511999999999" target="_blank" class="btn">Falar no WhatsApp</a>
+        <p style="margin-top: 50px; font-size: 0.9rem; color: #7f8c8d;">&copy; 2026 Cavalcante Marcas e Patentes. Todos os direitos reservados.</p>
     </footer>
 
 </body>
