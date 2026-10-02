@@ -12,9 +12,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#050a11', 
-                            orange: '#e85d22', 
-                            red: '#cc2812', 
+                            dark: '#050a11', /* Ajustado para um tom ainda mais escuro para fundir melhor com a logo */
+                            orange: '#e85d22', /* Laranja da fênix */
+                            red: '#cc2812', /* Vermelho da fênix */
                             light: '#f3f4f6'
                         }
                     },
@@ -53,8 +53,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <!-- Logomarca restaurada puxando o arquivo local -->
-                    <img class="h-16 md:h-20 w-auto object-contain" src="LOGOMARCA.jpg" alt="Cavalcante Marcas e Patentes">
+                    <!-- Logomarca incorporada em Base64 -->
+                    <img class="h-16 md:h-20 w-auto object-contain" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMACAYGBwYFCAcHBwkJCAoMFA0MCwsMGRITDxQdGh8eHRocHCAkLicgIiwjHBwoNyksMDE0NDQfJzk9ODI8LjM0Mv/bAEMBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAoACgAMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwEEBQYIAwL/xABGEAABAwMDAgMDCAcHAwQDAQABAAIDBAURBgchEjETQVEUImEVIzJxcnOBsTQ1NkJSkZIWFyQmM1RiJYKhQ0RTwSdj4VX/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QAJREBAQACAgMAAwACAwEAAAAAAAECEQMxBBIhEyJBBVEjMmFx/9oADAMBAAIRAxEAPwCC0RF2ecREQEREBERAREQEREBERAREQEREBERAREQEREBEVUFEVUwgoiFEBERAREQEREBERAREQEREBERAREQEREBERAREQERVwEFEVcJhBRERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBM4TCIoOT9a+nNLe/CyWnqB1zvdNShuet3P1K61db222/S0rW9IZ5IumBRUCqjIiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIK+SIvqMdUrR6kIDo3MALgRnsvlbnq2xC32K21TWY8VuSVpnZyBhUVVRAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERfccbpHBozk+iD5C+ecr0ex0bnMeCCF8jlFSDtBQe26wjJbkMGVXd+iNJrKR4bgSMCzWw8IdqKpe791vCyO/Vq8Oppa5o78FTbciEcYyiqRwqLTmIiKAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgr5r3oozJWxRju54H/AJXgFn9H0BuOqaOADqHWCVKsiXNybO1u2tueG+9EGglQIRzj0XVm5lGG7dyRgf6bBj+S5U7uKYrYoOyoq4X26JzGB7mnDuxVTTzRCMIiCIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIqCrhe1JAamoZC3u44XrcaF9BUGF+cgeigtFkrCwPvNKx30HPA/8rGK8tkvg3Kmf26ZAUt0sZrW1qNqvkjOnDXty1ay1TRupZBV2KgvEQ7xDqI8+FDPYD1U2tmkv7DPaL/UsJ5LVI28Vm+UtJvma3L4cEKItl672XWAYXY8RuF0lfKIXKyVNM4Z62HCzW504lkBa4g+RwvkLK3+hdQXmpp3tLel57hYpbnTnREREEREBERAREQEREBERAREQEREBERAREQERCg+mjKk7ZO0Gt1WahzT4cTe+PNRizJcMd8rprZSwC36cdWyMxJMeMjyWcm8Yzm6soi0LWD1GFyS4++und7LgKfSZhz70h7LmF30griZPuCN0srWNGXOPZbXqy0i1W+hic3D3Rhx/kvPb+zOvWp6aLo6mB3I9FsO8j2t1Gyl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" alt="Cavalcante Marcas e Patentes">
                 </div>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#vantagens" class="text-gray-300 hover:text-white transition px-3 py-2 text-sm font-medium">Vantagens</a>
@@ -95,6 +95,7 @@
                 <p class="text-gray-400 text-lg">Descubra as vantagens exclusivas de ser o verdadeiro dono da sua marca.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
                 <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
                     <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
                         <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -102,6 +103,7 @@
                     <h3 class="text-xl font-semibold mb-3">Uso Exclusivo</h3>
                     <p class="text-gray-400 text-sm">Garante o direito de uso exclusivo da sua marca em todo o Brasil no seu segmento de atuação.</p>
                 </div>
+                <!-- Card 2 -->
                 <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
                     <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
                         <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
@@ -109,6 +111,7 @@
                     <h3 class="text-xl font-semibold mb-3">Proteção contra Cópias</h3>
                     <p class="text-gray-400 text-sm">Base legal sólida para impedir que concorrentes usem nomes ou logotipos semelhantes para confundir clientes.</p>
                 </div>
+                <!-- Card 3 -->
                 <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
                     <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
                         <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
@@ -116,6 +119,7 @@
                     <h3 class="text-xl font-semibold mb-3">Patrimônio do Negócio</h3>
                     <p class="text-gray-400 text-sm">A marca registrada torna-se um bem móvel da empresa, podendo ser avaliada, vendida ou herdada.</p>
                 </div>
+                <!-- Card 4 -->
                 <div class="bg-brand-dark p-8 rounded-xl border border-gray-800 hover:border-brand-orange transition group">
                     <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-orange/20 transition">
                         <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
@@ -129,7 +133,9 @@
 
     <!-- Seção Riscos (Casos de Notificação) -->
     <section id="riscos" class="py-20 relative overflow-hidden">
+        <!-- Elemento visual de fundo -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-red/5 blur-3xl"></div>
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -137,13 +143,17 @@
                     <p class="text-gray-300 text-lg mb-8 leading-relaxed">
                         No Brasil, a propriedade de uma marca não pertence a quem usou primeiro, mas sim a <strong>quem registrar primeiro no INPI</strong>. Milhares de empresas perdem tudo o que construíram do dia para a noite.
                     </p>
+                    
                     <div class="space-y-6">
+                        <!-- Caso 1 -->
                         <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
                             <h4 class="text-white font-bold text-lg mb-2">Notificação Extrajudicial e Rebranding Forçado</h4>
                             <p class="text-gray-400 text-sm">
                                 "Uma hamburgueria local operou por 4 anos com muito sucesso. Porém, outra empresa em outro estado registrou o mesmo nome. O dono original recebeu uma notificação judicial, foi obrigado a trocar toda a sua fachada, embalagens e redes sociais em 15 dias, sob pena de multa diária de R$ 5.000,00."
                             </p>
                         </div>
+                        
+                        <!-- Caso 2 -->
                         <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
                             <h4 class="text-white font-bold text-lg mb-2">Bloqueio de Redes Sociais e E-commerce</h4>
                             <p class="text-gray-400 text-sm">
@@ -152,6 +162,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="bg-gray-900 border border-gray-800 rounded-2xl p-10 text-center relative">
                     <svg class="w-16 h-16 text-brand-orange mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                     <h3 class="text-2xl font-bold mb-4">Não corra este risco</h3>
@@ -173,6 +184,7 @@
                 <h2 class="text-3xl font-bold mb-4">Marcas que confiam na Cavalcante</h2>
                 <p class="text-gray-400">Junte-se ao grupo de empresários que protegem seus maiores ativos conosco.</p>
             </div>
+            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-70 grayscale hover:grayscale-0 transition duration-500">
                 <div class="bg-brand-dark border border-gray-800 h-24 rounded-lg flex items-center justify-center p-4">
                     <span class="text-gray-500 font-semibold text-sm">LOGO DO CLIENTE 1</span>
@@ -195,10 +207,12 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-brand-dark border border-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-brand"></div>
+                
                 <div class="text-center mb-10">
                     <h2 class="text-3xl font-bold mb-4">Proteja sua marca hoje mesmo</h2>
                     <p class="text-gray-400">Preencha os dados abaixo ou chame no WhatsApp para iniciarmos o processo de análise e registro.</p>
                 </div>
+
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
@@ -222,6 +236,7 @@
                         Solicitar Contato
                     </button>
                 </form>
+
                 <div class="mt-8 pt-8 border-t border-gray-800 text-center">
                     <p class="text-gray-400 mb-4">Ou se preferir um atendimento mais rápido:</p>
                     <a href="https://wa.me/5511999999999" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-3 rounded-lg font-semibold transition">
