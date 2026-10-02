@@ -7,6 +7,7 @@
     <meta name="description" content="Especialistas em registro de marcas e patentes. Proteja o ativo mais valioso da sua empresa com segurança jurídica.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* --- VARIÁVEIS DE CORES --- */
         :root {
             --bg-dark: #0A0F1D;
             --bg-card: #131A2B;
@@ -17,6 +18,7 @@
             --gradient-brand: linear-gradient(135deg, #E67E41 0%, #C62828 100%);
         }
 
+        /* --- RESET E ESTILOS GERAIS --- */
         * {
             margin: 0;
             padding: 0;
@@ -66,16 +68,11 @@
             margin: 0 auto;
         }
 
-        /* LOGO ESTILIZADA PARA GARANTIR VISIBILIDADE */
         .logo img {
-            height: 65px;
+            height: 60px;
             width: auto;
             display: block;
             object-fit: contain;
-            background: #ffffff; /* Fundo branco protetor caso a logo seja escura */
-            padding: 6px 12px;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         nav {
@@ -340,8 +337,15 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <!-- Aponte diretamente para o ficheiro da imagem na mesma pasta -->
-                <img src="LOGOMARCA.jpg" alt="Cavalcante Marcas e Patentes">
+                <!-- Tenta carregar a imagem LOGOMARCA.jpg. Se falhar, substitui automaticamente pelo logótipo profissional em HTML -->
+                <img src="LOGOMARCA.jpg" alt="Cavalcante Marcas e Patentes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display: none; align-items: center; gap: 10px;">
+                    <div style="width: 38px; height: 38px; background: linear-gradient(135deg, #E67E41, #C62828); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-family: 'Montserrat', sans-serif;">C</div>
+                    <div style="display: flex; flex-direction: column;">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 900; color: #FFFFFF; letter-spacing: 0.5px;">CAVALCANTE</span>
+                        <span style="font-size: 8px; text-transform: uppercase; letter-spacing: 1.5px; color: #E67E41; font-weight: 700;">Marcas e Patentes</span>
+                    </div>
+                </div>
             </div>
             <nav>
                 <a href="#vantagens">Vantagens</a>
