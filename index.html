@@ -7,7 +7,6 @@
     <meta name="description" content="Especialistas em registro de marcas e patentes. Proteja o ativo mais valioso da sua empresa com segurança jurídica.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* --- VARIÁVEIS DE CORES (Baseadas na Logomarca) --- */
         :root {
             --bg-dark: #0A0F1D;
             --bg-card: #131A2B;
@@ -18,7 +17,6 @@
             --gradient-brand: linear-gradient(135deg, #E67E41 0%, #C62828 100%);
         }
 
-        /* --- RESET E ESTILOS GERAIS --- */
         * {
             margin: 0;
             padding: 0;
@@ -68,11 +66,49 @@
             margin: 0 auto;
         }
 
-        .logo img {
-            height: 70px;
-            width: auto;
-            display: block;
-            object-fit: contain;
+        /* Logo Profissional em HTML/CSS (Garantido de aparecer) */
+        .logo-marca {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icone {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-brand);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 126, 65, 0.3);
+        }
+
+        .logo-textos {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-nome {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+        }
+
+        .logo-sub {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-top: -2px;
         }
 
         nav {
@@ -337,8 +373,14 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <!-- Logomarca embutida diretamente via Base64 (sem falhas de link ou 404) -->
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIAGJAGkAYwAuACAAMgAwADEANv/bAEMACAYGBwYFCAcHBwkJCAoMFA0MCwsMGRITDxQdGh8eHRocHCAkLicgIiwjHBwoNyksMDE0NDQfJzk9ODI8LjM0Mv/bAEMBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAoACgAMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwEEBQYIAwL/xABGEAABAwMDAgMDCAcHAwQDAQABAAIDBAURBgchEjETQVEUImEVIzJxcnOBsTQ1NkJSkZIWFyQmM1RiJYKhQ0RTwSdj4VX/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QAJREBAQACAgMAAwACAwEAAAAAAAECEQMxBBIhEyJBBVEjMmFx/9oADAMBAAIRAxEAPwCC0RF2ecREQEREBERAREQEREBERAREQEREBERAREQEREBEVUFEVUwgoiFEBERAREQEREBERAREQEREBERAREQEREBERAREQERVwEFEVcJhBRERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBM4TCIoOT9a+nNLe/CyWnqB1zvdNShuet3P1K61db222/S0rW9IZ5IumBRUCqjIiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIK+SIvqMdUrR6kIDo3MALgRnsvlbnq2xC32K21TWY8VuSVpnZyBhUVVRAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERfccbpHBozk+iD5C+ecr0ex0bnMeCCF8jlFSDtBQe26wjJbkMGVXd+iNJrKR4bgSMCzWw8IdqKpe791vCyO/Vq8Oppa5o78FTbciEcYyiqRwqLTmIiKAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgr5r3oozJWxRju54H/AJXgFn9H0BuOqaOADqHWCVKsiXNybO1u2tueG+9EGglQIRzj0XVm5lGG7dyRgf6bBj+S5U7uKYrYoOyoq4X26JzGB7mnDuxVTTzRCMIiCIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIqCrhe1JAamoZC3u44XrcaF9BUGF+cgeigtFkrCwPvNKx30HPA/8rGK8tkvg3Kmf26ZAUt0sZrW1qNqvkjOnDXty1ay1TRupZBV2KgvEQ7xDqI8+FDPYT1U2tmkv7DPaL/UsJ5LVI28Vm+UtJvma3L4cEKItl672XWAYXY8RuF0lfKIXKyVNM4Z62HCzW504lkBa4g+RwvkLK3+hdQXmpp3tLel57hYpbnTnREREEREBERAREQEREBERAREQEREBERAREQERCg+mjKk7ZO0Gt1WahzT4cTe+PNRizJcMd8rprZSwC36cdWyMxJMeMjyWcm8Yzm6soi0LWD1GFyS4++und7LgKfSZhz70h7LmF30griZPuCN0srWNGXOPZbXqy0i1W+hic3D3Rhx/kvPb+zOzWp6aLo6mB3I9FsO8j2t1Gylj4bCwM4Tf1L0jQrgethccQdzwMKspFlLpaJbZFTvkbjxW5wVjPJUUREUBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQAiKiKymn+b3SA9jIFu+6di9gmpa1jSI5GDPC0Szv8O70rvSQLo/W1gGoNvIZo2gyRxhwP4I1I5hHYL6aegh3mDlVmidBK+NwwWnCoPPjPCl+s9V0xYadmr9rG07uZGx4GeVzpd7dJarnUUkrcOi4AYAXO13t1lqWbgyoaeR2CebpLVqWuzgwQcfaLpC200oZfWw6fkM0sXUCO5Vb7U6ilvFaqV8lVK+d4a1oLnEnAK1bZu12rr7f6aipbdNH4kgY8uacjJWr77W2+091uN0lGZZHuP4lY696ouV7uDqqrqXvlbxknnC+U2q6Y9/e+ttm7rJpihlqZKeTqI98lq8nU2tW04Y65TYaMfe5SxpC+z6a1hS1cL3Bpmsa8A9gSFNmr/uVpqa73COJtO/pLxzjhe26aPqrZp+qnkY5zXRPcDhQhvrqOa13B9LTSOjkaWlpHYhbbbbnU1V5p4pZneuYXjoBK+W46K05V6gvgpoo3P6h0v47Ldbn9i+oNPSuobhE9rwMDkKStvd3v1mvMFRQTvjka8cAnCq93d47lre8xVVY5xdG8lgyo82mK9Jd2L3drZUz01TC9rwMcBZfSWn6rUt5jpopHYcTjLStv2R0JXX69wTzwyNo2vD3PcMBa5tjrO46evVLBTVLodTx0lwW817h6c15tf1Gj4o6asfyR+7lYm/vruq41E09Q8yOe7klbT3sZcTvdL+r+J+Zt9P9G7o92kpn6Xq45XvAjjcTlfT11w+r56yol/1nk/ldNezP6K0d4Tj736tSnp3eDUMjH0uP32k5XN9pGq7jJq2rjp55GMa8gNB4Cu9jK+63O808lS556nAczhS1sT23TuoZqaWvqnwuc8EPeckKn3X+l7qH/vH1W/7F/0/Sf7x/5rfhpr24+oN2r1V6ftjqiGRwka3OSSuQt6r7V36uNTTTPjuB4AJOcldV3v9i6r/Zv5LgfYj+tqP8AeNXn5L2q6i0T/j7p/uHrkT773Gpr9P0UFRUSSOBwSStdv3GuqqvTT9S3uFz6gB733Ua8P16vJ26d83p47p1Tq/r1M47h1q+c23uunP41910n0f8AQf5/X1X0a+tH9ev/ALd/8Ff/2Q==" alt="Cavalcante Marcas e Patentes">
+                <!-- Logótipo Profissional Tipográfico em HTML/CSS -->
+                <div class="logo-marca">
+                    <div class="logo-icone">C</div>
+                    <div class="logo-textos">
+                        <span class="logo-nome">CAVALCANTE</span>
+                        <span class="logo-sub">Marcas e Patentes</span>
+                    </div>
+                </div>
             </div>
             <nav>
                 <a href="#vantagens">Vantagens</a>
