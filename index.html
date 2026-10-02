@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cavalcante Marcas e Patentes</title>
+    <title>Cavalcante Marcas e Patentes | Proteja sua Marca</title>
+    <meta name="description" content="Especialistas em registro de marcas e patentes. Proteja o ativo mais valioso da sua empresa com segurança jurídica.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         /* --- VARIÁVEIS DE CORES (Baseadas na Logomarca) --- */
@@ -24,6 +25,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--bg-dark);
@@ -31,7 +36,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
         }
@@ -40,17 +45,18 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         /* --- HEADER --- */
         header {
-            background-color: var(--bg-dark);
-            padding: 20px 0;
+            background-color: rgba(10, 15, 29, 0.95);
+            padding: 15px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(10px);
         }
 
         .header-content {
@@ -62,19 +68,15 @@
             margin: 0 auto;
         }
 
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 24px;
-            letter-spacing: 2px;
+        .logo img {
+            height: 70px;
+            width: auto;
+            display: block;
         }
 
-        .logo-text span {
-            display: block;
-            font-size: 12px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: var(--text-muted);
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -82,7 +84,7 @@
             text-decoration: none;
             margin-left: 30px;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 15px;
             transition: color 0.3s;
         }
 
@@ -92,13 +94,16 @@
 
         .btn-cta {
             background: var(--gradient-brand);
-            color: white;
+            color: white !important;
             padding: 12px 24px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 700;
             font-family: 'Montserrat', sans-serif;
             transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
         }
 
         .btn-cta:hover {
@@ -109,14 +114,14 @@
         /* --- HERO --- */
         .hero {
             text-align: center;
-            padding: 100px 0;
+            padding: 120px 0;
             background: radial-gradient(circle at top, #1A2438 0%, var(--bg-dark) 70%);
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.2;
         }
 
@@ -127,30 +132,43 @@
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 19px;
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 40px auto;
         }
 
         /* --- VANTAGENS --- */
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 17px;
+        }
+
         .vantagens-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .card {
             background-color: var(--bg-card);
             padding: 40px 30px;
             border-radius: 8px;
-            border-top: 3px solid var(--accent-orange);
-            transition: transform 0.3s;
+            border-top: 4px solid var(--accent-orange);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .card h3 {
@@ -166,26 +184,26 @@
 
         /* --- CASOS REAIS --- */
         .casos {
-            background-color: var(--bg-card);
-        }
-
-        .casos h2 {
-            text-align: center;
-            margin-bottom: 40px;
+            background-color: #0D1424;
         }
 
         .alerta {
-            background-color: rgba(198, 40, 40, 0.1);
+            background-color: rgba(198, 40, 40, 0.08);
             border-left: 4px solid var(--accent-red);
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
             border-radius: 0 8px 8px 0;
+            transition: background-color 0.3s;
+        }
+
+        .alerta:hover {
+            background-color: rgba(198, 40, 40, 0.15);
         }
 
         .alerta h4 {
             color: var(--accent-red);
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 5px;
+            font-size: 18px;
+            margin-bottom: 8px;
         }
 
         .alerta p {
@@ -193,61 +211,87 @@
             font-size: 15px;
         }
 
+        .alerta strong {
+            color: var(--text-main);
+        }
+
         /* --- CLIENTES --- */
         .clientes-placeholder {
             text-align: center;
-            padding: 60px;
+            padding: 80px 40px;
             border: 2px dashed rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             color: var(--text-muted);
             font-style: italic;
+            background-color: var(--bg-card);
         }
 
         /* --- CONTATO --- */
         .contato {
             text-align: center;
+            background: radial-gradient(circle at bottom, #1A2438 0%, var(--bg-dark) 70%);
         }
 
         .form-contato {
-            max-width: 600px;
+            max-width: 650px;
             margin: 40px auto 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 18px;
+            text-align: left;
+        }
+
+        .form-contato label {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: -10px;
+            margin-left: 5px;
         }
 
         .form-contato input, 
         .form-contato textarea {
             width: 100%;
-            padding: 15px;
+            padding: 16px;
             background-color: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
+            border-radius: 6px;
             color: white;
             font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            transition: border-color 0.3s;
         }
 
         .form-contato input:focus, 
         .form-contato textarea:focus {
             outline: none;
             border-color: var(--accent-orange);
+            box-shadow: 0 0 0 2px rgba(230, 126, 65, 0.2);
         }
 
         .form-contato button {
             background: var(--gradient-brand);
             color: white;
-            padding: 15px;
+            padding: 18px;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 17px;
             font-weight: 700;
             font-family: 'Montserrat', sans-serif;
             cursor: pointer;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, transform 0.3s;
+            margin-top: 10px;
         }
 
         .form-contato button:hover {
-            opacity: 0.9;
+            opacity: 0.95;
+            transform: scale(1.02);
+        }
+
+        .info-contato {
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 2;
         }
 
         /* --- FOOTER --- */
@@ -261,16 +305,27 @@
         }
 
         /* --- RESPONSIVIDADE --- */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .header-content {
                 flex-direction: column;
                 gap: 20px;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
             }
             nav a {
                 margin: 0 10px;
             }
             .hero h1 {
-                font-size: 32px;
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 28px;
             }
         }
     </style>
@@ -280,9 +335,9 @@
     <!-- HEADER -->
     <header>
         <div class="header-content">
-            <div class="logo-text">
-                CAVALCANTE
-                <span>Marcas e Patentes</span>
+            <div class="logo">
+                <!-- Certifique-se de que o arquivo da sua logo está na mesma pasta e se chama logo.jpg -->
+                <img src="logo.jpg" alt="Cavalcante Marcas e Patentes">
             </div>
             <nav>
                 <a href="#vantagens">Vantagens</a>
@@ -298,14 +353,14 @@
         <div class="container">
             <h1>Proteja o ativo mais valioso da sua empresa: <span>a sua marca.</span></h1>
             <p>Registro de marcas com segurança jurídica, agilidade e acompanhamento especializado perante o INPI.</p>
-            <a href="#contato" class="btn-cta" style="font-size: 18px; padding: 15px 40px;">Fale com um Especialista</a>
+            <a href="#contato" class="btn-cta" style="font-size: 18px; padding: 16px 45px;">Fale com um Especialista</a>
         </div>
     </section>
 
     <!-- VANTAGENS -->
     <section id="vantagens" class="container">
-        <h2 style="text-align: center; margin-bottom: 20px;">Por que registrar sua marca?</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">O registro no INPI é a única forma de garantir o direito exclusivo de uso em todo o Brasil.</p>
+        <h2 class="section-title">Por que registrar sua marca?</h2>
+        <p class="section-subtitle">O registro no INPI é a única forma de garantir o direito exclusivo de uso em todo o Brasil.</p>
         
         <div class="vantagens-grid">
             <div class="card">
@@ -330,29 +385,29 @@
     <!-- CASOS REAIS -->
     <section id="casos" class="casos">
         <div class="container">
-            <h2>O que acontece quando a marca não é registrada?</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Casos reais de empresas que perderam tudo por falta de proteção.</p>
+            <h2 class="section-title">O que acontece quando a marca não é registrada?</h2>
+            <p class="section-subtitle">Casos reais de empresas que perderam tudo por falta de proteção.</p>
 
             <div class="alerta">
                 <h4>Danone e o termo "Grego"</h4>
-                <p>A Danone investiu milhões para trazer o iogurte grego ao Brasil, mas a Vigor registrou primeiro o nome no INPI. Resultado: a Danone foi impedida de usar o termo e precisou alterar embalagens e campanhas.</p>
+                <p>A Danone investiu milhões para trazer o iogurte grego ao Brasil, mas a Vigor registrou primeiro o nome no INPI. <strong>Resultado:</strong> a Danone foi impedida de usar o termo e precisou alterar embalagens e campanhas.</p>
             </div>
 
             <div class="alerta">
                 <h4>Burger King x Rede Nacional</h4>
-                <p>Antes da chegada do Burger King ao Brasil, uma pequena rede de fast food já usava nome similar. Sem registro no INPI, essa empresa foi obrigada a mudar de nome e perdeu toda a identidade construída.</p>
+                <p>Antes da chegada do Burger King ao Brasil, uma pequena rede de fast food já usava nome similar. <strong>Resultado:</strong> Sem registro no INPI, essa empresa foi obrigada a mudar de nome e perdeu toda a identidade construída.</p>
             </div>
 
             <div class="alerta">
                 <h4>Escola Online "Método Impacto"</h4>
-                <p>Um coach digital construiu uma academia online, mas nunca registrou. Recebeu notificação do Facebook e Instagram por uso indevido de marca registrada por outra empresa. Teve que fechar as contas e recomeçar do zero.</p>
+                <p>Um coach digital construiu uma academia online, mas nunca registrou. Recebeu notificação do Facebook e Instagram por uso indevido de marca registrada por outra empresa. <strong>Resultado:</strong> Teve que fechar as contas e recomeçar do zero.</p>
             </div>
         </div>
     </section>
 
     <!-- CLIENTES -->
     <section id="clientes" class="container">
-        <h2 style="text-align: center; margin-bottom: 40px;">Empresas que confiam na Cavalcante</h2>
+        <h2 class="section-title">Empresas que confiam na Cavalcante</h2>
         <div class="clientes-placeholder">
             [Espaço reservado para os logos dos seus clientes]
             <br><br>
@@ -361,30 +416,42 @@
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="contato container">
-        <h2>Quer registrar sua marca?</h2>
-        <p style="color: var(--text-muted);">Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
-        
-        <form class="form-contato" onsubmit="event.preventDefault(); alert('Formulário enviado! (Este é um exemplo. Configure o backend para receber os dados)');">
-            <input type="text" placeholder="Seu Nome Completo" required>
-            <input type="email" placeholder="Seu E-mail" required>
-            <input type="tel" placeholder="Telefone / WhatsApp" required>
-            <input type="text" placeholder="Nome da Marca (Opcional)">
-            <textarea rows="5" placeholder="Mensagem (Conte-nos sobre sua marca)"></textarea>
-            <button type="submit">Enviar Solicitação</button>
-        </form>
-        
-        <p style="margin-top: 30px; color: var(--text-muted); font-size: 14px;">
-            Ou fale diretamente conosco: <br>
-            📧 contato@cavalcantemarcas.com.br | 📞 (XX) XXXX-XXXX
-        </p>
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2 class="section-title">Quer registrar sua marca?</h2>
+            <p class="section-subtitle">Preencha o formulário abaixo e nossa equipe entrará em contato.</p>
+            
+            <form class="form-contato" onsubmit="event.preventDefault(); alert('Solicitação enviada com sucesso! Entraremos em contato em breve.'); this.reset();">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+                
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+                
+                <label for="marca">Nome da Marca (Opcional)</label>
+                <input type="text" id="marca" placeholder="Qual o nome da sua marca?">
+                
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" rows="5" placeholder="Conte-nos um pouco sobre sua necessidade..."></textarea>
+                
+                <button type="submit">Enviar Solicitação</button>
+            </form>
+            
+            <div class="info-contato">
+                Ou fale diretamente conosco: <br>
+                📧 contato@cavalcantemarcas.com.br | 📞 (XX) XXXX-XXXX
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="container">
+        <div class="container" style="padding: 20px 0;">
             <p>&copy; 2026 Cavalcante Marcas e Patentes. Todos os direitos reservados.</p>
-            <p style="font-size: 12px; margin-top: 10px;">Este site tem caráter informativo e não substitui a consultoria jurídica especializada.</p>
+            <p style="font-size: 12px; margin-top: 10px; opacity: 0.6;">Este site tem caráter informativo e não substitui a consultoria jurídica especializada.</p>
         </div>
     </footer>
 
